@@ -44,6 +44,7 @@
             { "allowAsProps": false }
           ],
           "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
-          "no-return-assign": "off"
+          "no-return-assign": "off",
+          "no-plusplus": "off"
   }
 }
