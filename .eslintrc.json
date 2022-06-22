@@ -43,7 +43,7 @@
             "off" ,
             { "allowAsProps": false }
           ],
-          "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }]
-
+          "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+          "no-return-assign": "off"
   }
 }
