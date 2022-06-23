@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ClassCounter from './components/ClassCounter';
 import Counter from './components/Counter';
 import './App.css';
-import PostItem from './components/PostItem';
+import PostList from './components/PostList';
 
 function App() {
   const [posts] = useState([
@@ -14,8 +14,7 @@ function App() {
     <div className="App">
       <Counter />
       <ClassCounter />
-      <h1>Posts list</h1>
-      {posts.map((post) => <PostItem post={post} key={post.id} />)}
+      <PostList title="PostList" posts={posts} />
     </div>
   );
 }
