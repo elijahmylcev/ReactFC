@@ -1,10 +1,11 @@
 function PostItem(props) {
   const { id, title, body } = props.post;
+  const { number } = props;
   return (
     <div className="post">
       <div className="post__content">
         <strong>
-          {id}
+          {number}
           .
           {' '}
           {title}
