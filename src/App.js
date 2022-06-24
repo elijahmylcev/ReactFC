@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ClassCounter from './components/ClassCounter';
 import Counter from './components/Counter';
 import './App.css';
@@ -12,15 +12,36 @@ function App() {
     { id: 2, title: 'JavaScript - is programming language', body: 'description' },
     { id: 3, title: 'JavaScript - is programming language', body: 'description' },
   ]);
+
+  const [title, setTitle] = useState('');
+  const bodyInputRef = useRef();
+
+  const addNewPost = (e) => {
+    e.preventDefault();
+    console.log(title);
+    console.log(bodyInputRef.current.value);
+  };
+
   return (
     <div className="App">
       <Counter />
       <ClassCounter />
       <PostList title="PostList" posts={posts} />
       <form action="submit">
-        <MyInput type="text" placeholder="Title of post" />
-        <MyInput type="text" placeholder="Description" />
-        <MyButton>Create Post</MyButton>
+        {/* Управляемый компонент */}
+        <MyInput
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          placeholder="Title of post"
+        />
+        {/* Неуправляемый, неконтролируемый компонент */}
+        <MyInput
+          ref={bodyInputRef}
+          type="text"
+          placeholder="Description"
+        />
+        <MyButton onClick={addNewPost}>Create Post</MyButton>
       </form>
     </div>
   );
