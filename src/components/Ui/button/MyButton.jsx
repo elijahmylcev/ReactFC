@@ -1,10 +1,13 @@
 import React from 'react';
 import classes from './MyButton.module.css';
 
-function MyButton(props) {
-  const { children } = props;
+function MyButton({ children, ...props }) {
   return (
-    <button type="submit" className={classes.myBtn}>
+    <button
+      type="submit"
+      className={classes.myBtn}
+      {...props}
+    >
       {children}
     </button>
   );
