@@ -24,8 +24,10 @@ function App() {
       {/* <Counter />
       <ClassCounter /> */}
       <PostForm create={createPost} />
+      {posts.length !== 0
+        ? <PostList remove={removePost} title="PostList" posts={posts} />
+        : <h1>Posts not found</h1>}
 
-      <PostList remove={removePost} title="PostList" posts={posts} />
     </div>
   );
 }
