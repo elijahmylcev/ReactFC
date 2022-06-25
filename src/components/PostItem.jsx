@@ -1,3 +1,5 @@
+import MyButton from './Ui/button/MyButton';
+
 function PostItem(props) {
   const { id, title, body } = props.post;
   const { number } = props;
@@ -15,7 +17,7 @@ function PostItem(props) {
         </div>
       </div>
       <div className="post__btn">
-        <button type="button">Delete post</button>
+        <MyButton type="button">Delete post</MyButton>
       </div>
     </div>
   );
