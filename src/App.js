@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import ClassCounter from './components/ClassCounter';
-import Counter from './components/Counter';
+// import ClassCounter from './components/ClassCounter';
+// import Counter from './components/Counter';
 import './App.css';
 import PostList from './components/PostList';
-import MyButton from './components/Ui/button/MyButton';
-import MyInput from './components/Ui/input/MyInput';
 import PostForm from './components/PostForm';
 
 function App() {
@@ -17,6 +15,9 @@ function App() {
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
   };
+  const removePost = (post) => {
+    setPosts(posts.filter((p) => p.id !== post.id));
+  };
 
   return (
     <div className="App">
@@ -24,7 +25,7 @@ function App() {
       <ClassCounter /> */}
       <PostForm create={createPost} />
 
-      <PostList title="PostList" posts={posts} />
+      <PostList remove={removePost} title="PostList" posts={posts} />
     </div>
   );
 }
